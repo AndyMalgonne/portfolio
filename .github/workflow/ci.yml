@@ -1,0 +1,44 @@
+name: CI - Build and Push Portfolio
+
+on:
+  push:
+    branches: ["main"]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: 1. check source code
+        uses: actions/checkout@v4
+
+      - name: 2. connect registery
+        uses: actions/local/login-action@v3
+        with:
+          registry: ${{ env.ENV.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 3. tags versioning
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=short
+            type=raw,value=latest
+
+      - name: 4. compile and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ id.meta.outputs.tags }}
+          labels: ${{ id.meta.outputs.labels }}
