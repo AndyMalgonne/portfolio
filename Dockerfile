@@ -13,7 +13,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 # Étape 3 : Image finale de production (ultra légère)
-FROM node:sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14 AS runner
+FROM node@sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14 AS runner
 WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
