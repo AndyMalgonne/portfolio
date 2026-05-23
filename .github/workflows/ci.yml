@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: 1. check source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: 2. connect registery
-        uses: actions/local/login-action@v3
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.ENV.REGISTRY }}
           username: ${{ github.actor }}
