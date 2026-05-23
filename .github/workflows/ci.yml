@@ -42,3 +42,16 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Update GitOps Repository
+        run: |
+          git clone https://x-access-token:${{ secrets.GITOPS_TOKEN }}@github.com/andymalgonne/gitops_proxmox.git
+          cd gitops_proxmox
+
+          sed -i "s|image: ghcr.io/andymalgonne/portfolio.*|image: ghcr.io/andymalgonne/portfolio:sha-${GITHUB_SHA::7}|g" apps/test-nginx/app_test.yaml
+
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add apps/test-nginx/app_test.yaml
+          git commit -m "Auto-deploy: version sha-${GITHUB_SHA::7}"
+          git push
