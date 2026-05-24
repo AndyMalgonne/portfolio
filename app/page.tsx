@@ -11,16 +11,19 @@ export default function Home() {
       japaneseSecret: "* Actually, I don't really speak Japanese. I just have a degree and I really love anime.",
       btnProjects: "VOIR LES PROJETS",
       btnContact: "CONTACT",
+      btnCV: "WGET CV.pdf",
       projectsTitle: "Projets Récents",
       timelineTitle: "Parcours & Formation",
 
+      // Projets
       rdcRole: "Ingénieur DevOps & Frontend (Bénévole)",
       rdcDesc: "Refonte de la plateforme de gestion des maraudes et de la flotte de véhicules. Conteneurisation (Docker), création des pipelines CI/CD sur GitLab CI, et développement de l'interface utilisateur pour les bénévoles sur le terrain.",
       gitopsRole: "Architecte Cloud / SRE (Projet Personnel)",
       gitopsDesc: "Création d'un Homelab complet sur Proxmox VE. Déploiement d'un cluster Kubernetes (K3s), gestion du routage avec Traefik/Caddy, et mise en place d'un pipeline de déploiement continu 100% GitOps avec ArgoCD et GitHub Actions.",
 
+      // Parcours
       school42: "Master's degree, Computer Science - Formation intensive basée sur le peer-to-peer learning. Projets concrets en C/C++, algorithmie, et architecture système.",
-      univJap: "Licence 2 Langue, Littérature et Culture Japonaise - Apprentissage de la langue et de la rigueur analytique.",
+      univJap: "Licence 2 Langue, Littérature et Culture Japononaise - Apprentissage de la langue et de la rigueur analytique.",
     },
     en: {
       role: "DevOps Engineer & SRE",
@@ -28,6 +31,7 @@ export default function Home() {
       japaneseSecret: "* Actually, I don't really speak Japanese. I just have a degree and I really love anime.",
       btnProjects: "VIEW PROJECTS",
       btnContact: "CONTACT",
+      btnCV: "WGET CV.pdf",
       projectsTitle: "Recent Projects",
       timelineTitle: "Experience & Education",
 
@@ -41,10 +45,11 @@ export default function Home() {
     },
     ja: {
       role: "DevOpsエンジニア & SRE",
-      description: "私の経歴は直線的ではありません。法学と日本語を学んだ後、原点であるÉcole 42に戻りました。自動化とスケーラブルなインフラに強い情熱を持っており、現在、DevOps / クラウドエンジニアリングのインターンシップを積極的に探しています。",
+      description: "私の経歴は直線的ではありません。法学と日本語を学んだ後、原点であるÉcole 42に戻りました。自動化とスケーラブルなインフラに強い情熱を持っており、現在、DevOps / クラウドエンジニアリング of インターンシップを積極的に探しています。",
       japaneseSecret: "* Actually, I don't really speak Japanese. I just have a degree and I really love anime.",
       btnProjects: "プロジェクトを見る",
       btnContact: "コンタクト",
+      btnCV: "CVダウンロード.pdf",
       projectsTitle: "最近のプロジェクト",
       timelineTitle: "経歴・学歴",
 
@@ -67,7 +72,7 @@ export default function Home() {
 
       <main className="relative z-10 w-full max-w-4xl border border-green-500/30 bg-black/80 p-6 pt-20 md:p-12 shadow-[0_0_15px_rgba(0,255,0,0.1)] mt-4 md:mt-10 mb-10 md:mb-20">
 
-        {/* Switch Langue (Responsive position) */}
+        {/* Switch Langue */}
         <div className="absolute top-6 right-6 md:top-10 md:right-12 flex gap-3 text-xl md:text-2xl z-20">
           <button onClick={() => setLang("fr")} className={`transition-all duration-300 ${lang === "fr" ? "opacity-100 drop-shadow-[0_0_10px_rgba(34,197,94,0.8)] scale-110" : "opacity-40 grayscale hover:opacity-100 hover:grayscale-0"}`} title="Français">🇫🇷</button>
           <button onClick={() => setLang("en")} className={`transition-all duration-300 ${lang === "en" ? "opacity-100 drop-shadow-[0_0_10px_rgba(34,197,94,0.8)] scale-110" : "opacity-40 grayscale hover:opacity-100 hover:grayscale-0"}`} title="English">🇬🇧</button>
@@ -91,11 +96,17 @@ export default function Home() {
             {lang === "ja" && <span className="block text-xs text-green-500/60 mt-3 italic">{translations.ja.japaneseSecret}</span>}
           </p>
 
-          {/* Boutons empilés sur mobile, côte à côte sur PC */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 md:pt-8">
+          {/* Boutons d'action (Projets / Télécharger CV en Cyan / Contact) */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4 md:pt-8 font-mono">
             <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto px-6 py-3 md:py-2 border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(0,255,0,0.2)] hover:shadow-[0_0_20px_rgba(0,255,0,0.6)] font-bold text-center">
               {t.btnProjects}
             </button>
+
+            {/* Nouveau bouton CV en Cyan Cyberpunk */}
+            <a href="/Andy_Malgonne_CV.pdf" download="Andy_Malgonne_CV.pdf" className="w-full sm:w-auto px-6 py-3 md:py-2 border border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black transition-all duration-300 shadow-[0_0_10px_rgba(6,182,212,0.2)] hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] font-bold text-center">
+              {t.btnCV}
+            </a>
+
             <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="w-full sm:w-auto px-6 py-3 md:py-2 border border-gray-700 text-gray-400 hover:border-white hover:text-white transition-all duration-300 font-bold text-center">
               {t.btnContact}
             </button>
@@ -216,9 +227,9 @@ export default function Home() {
               <div className="space-y-2 border-t border-gray-800 md:border-t-0 md:border-l md:border-gray-800 md:pl-6 pt-4 md:pt-0">
                 <p className="text-gray-500 italic"># Custom scripts running in background:</p>
                 <ul className="space-y-2 md:space-y-1 text-[10px] md:text-xs">
-                  <li><span className="text-green-500">✔</span> anilist-updater.sh <span className="text-gray-600 block md:inline">(Auto-tracking anime list via API)</span></li>
-                  <li><span className="text-green-500">✔</span> life-optimizer.py <span className="text-gray-600 block md:inline">(Automating everything in daily routine)</span></li>
-                  <li><span className="text-green-500">✔</span> smart-home-trigger.sh <span className="text-gray-600 block md:inline">(Managing IoT & server metrics)</span></li>
+                  <li><span className="text-green-500">¼</span> anilist-updater.sh <span className="text-gray-600 block md:inline">(Auto-tracking anime list via API)</span></li>
+                  <li><span className="text-green-500">¼</span> life-optimizer.py <span className="text-gray-600 block md:inline">(Automating everything in daily routine)</span></li>
+                  <li><span className="text-green-500">¼</span> smart-home-trigger.sh <span className="text-gray-600 block md:inline">(Managing IoT & server metrics)</span></li>
                 </ul>
               </div>
             </div>
@@ -233,7 +244,6 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-start md:items-center justify-center bg-black/50 border border-green-500/20 p-6 md:p-8 hover:border-green-500/50 transition-colors">
 
-            {/* Lien LinkedIn */}
             <a href="https://www.linkedin.com/in/andy-malgonne/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 md:gap-3 text-gray-400 hover:text-green-500 transition-colors group text-base md:text-lg font-bold">
               <svg className="w-6 h-6 text-green-500 group-hover:animate-pulse drop-shadow-[0_0_5px_rgba(34,197,94,0.8)]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -243,7 +253,6 @@ export default function Home() {
 
             <span className="hidden md:block text-gray-700">|</span>
 
-            {/* Lien GitHub */}
             <a href="https://github.com/andymalgonne" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 md:gap-3 text-gray-400 hover:text-green-500 transition-colors group text-base md:text-lg font-bold">
               <svg className="w-6 h-6 text-green-500 group-hover:animate-pulse drop-shadow-[0_0_5px_rgba(34,197,94,0.8)]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -253,7 +262,6 @@ export default function Home() {
 
             <span className="hidden md:block text-gray-700">|</span>
 
-            {/* Lien Email */}
             <a href="mailto:contact@andytropmimi.fr" className="flex items-center gap-4 md:gap-3 text-gray-400 hover:text-green-500 transition-colors group text-base md:text-lg font-bold">
               <svg className="w-6 h-6 text-green-500 group-hover:animate-pulse drop-shadow-[0_0_5px_rgba(34,197,94,0.8)]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M0 4.667v14.666h24v-14.666h-24zm21.942 2l-9.942 6.944-9.942-6.944h19.884zm-19.942 10.666v-8.91l9.531 6.657.411.287.411-.287 9.531-6.657v8.91h-19.884z"/>
