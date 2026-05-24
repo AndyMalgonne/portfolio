@@ -97,7 +97,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-6">
-          <p className="text-xs md:text-base text-green-400/70 break-all">[root@kub-andytropmimi ~]# ./start_portfolio.sh</p>
+          <p className="text-xs md:text-base text-green-400/70 break-all">[notroot@andytropmimi.fr ~]# ./start_portfolio.sh</p>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter drop-shadow-[0_0_8px_rgba(34,197,94,0.8)] leading-tight">ANDY MALGONNE</h1>
           <h2 className="text-lg md:text-2xl text-white"><span className="text-green-500">&gt;</span> {t.role}<span className="animate-pulse">_</span></h2>
 
@@ -124,7 +124,7 @@ export default function Home() {
 
         {/* TECH STACK */}
         <div className="mt-16 md:mt-20 border-t border-green-500/30 pt-8">
-          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[root@kub-andytropmimi ~]# cat /etc/skills.conf</p>
+          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[notroot@andytropmimi.fr ~]# cat /etc/skills.conf</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="border border-green-500/20 bg-black/50 p-5 hover:border-green-500 hover:shadow-[0_0_15px_rgba(0,255,0,0.15)] transition-all group">
               <h3 className="text-white font-bold group-hover:text-green-400 mb-3 text-sm md:text-base">&gt; Infra & Cloud</h3>
@@ -156,7 +156,7 @@ export default function Home() {
 
         {/* PROJECTS */}
         <div id="projects" className="mt-16 md:mt-20 border-t border-green-500/30 pt-8 scroll-mt-20">
-          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[root@kub-andytropmimi ~]# ls -la /var/www/projects</p>
+          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[notroot@andytropmimi.fr ~]# ls -la /var/www/projects</p>
           <div className="flex flex-col gap-8 md:gap-6">
 
             {/* Projet 1 */}
@@ -177,7 +177,7 @@ export default function Home() {
             {/* Projet 2 */}
             <div className="border-l-2 border-green-500 pl-4 py-2 hover:bg-green-900/10 transition-colors">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 gap-2">
-                <h3 className="text-lg md:text-xl font-bold text-white">GitOps Bare-Metal Infra</h3>
+                <h3 className="text-lg md:text-xl font-bold text-white">Homelab</h3>
                 <span className="text-[10px] md:text-xs font-mono text-green-500 bg-green-900/30 px-2 py-1 rounded w-fit">2026</span>
               </div>
               <h4 className="text-green-400 text-xs md:text-sm mb-3 font-mono break-words">&gt; {t.gitopsRole}</h4>
@@ -186,6 +186,7 @@ export default function Home() {
                 <span className="border border-gray-700 px-2 py-1">Proxmox VE</span>
                 <span className="border border-gray-700 px-2 py-1">Kubernetes / ArgoCD</span>
                 <span className="border border-gray-700 px-2 py-1">GitHub Actions</span>
+				<span className="border border-gray-700 px-2 py-1">GitOps Principles</span>
               </div>
             </div>
 
@@ -194,7 +195,7 @@ export default function Home() {
 
         {/* TIMELINE / EDUCATION */}
         <div className="mt-16 md:mt-20 border-t border-green-500/30 pt-8">
-          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[root@kub-andytropmimi ~]# tail -f /var/log/syslog | grep "education"</p>
+          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[notroot@andytropmimi.fr ~]# tail -f /var/log/syslog | grep "education"</p>
           <div className="space-y-8 md:space-y-6">
 
             <div className="relative pl-6 border-l border-gray-700">
@@ -217,7 +218,7 @@ export default function Home() {
         {/* PASSIONS / PROFILE */}
         <div className="mt-16 md:mt-20 border-t border-green-500/30 pt-8">
           <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">
-            [root@kub-andytropmimi ~]# cat ~/.bash_profile
+            [notroot@andytropmimi.fr ~]# cat ~/.bash_profile
           </p>
 
           <div className="border border-green-500/20 bg-black/50 p-4 md:p-6 hover:border-green-500/40 transition-all">
@@ -251,7 +252,7 @@ export default function Home() {
         {/* CONTACT */}
         <div id="contact" className="mt-16 md:mt-20 border-t border-green-500/30 pt-8 scroll-mt-20">
           <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">
-            [root@kub-andytropmimi ~]# ./ping_andy.sh
+            [notroot@andytropmimi.fr ~]# ./ping_andy.sh
           </p>
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-6 items-start md:items-center justify-center bg-black/50 border border-green-500/20 p-6 md:p-8 hover:border-green-500/50 transition-colors">
@@ -277,7 +278,7 @@ export default function Home() {
             <span className="hidden md:block text-gray-700">|</span>
 
             {/* Lien Email */}
-            <a href="mailto:contact@andytropmimi.fr" className="flex items-center gap-4 md:gap-3 text-gray-400 hover:text-green-500 transition-colors group text-base md:text-lg font-bold">
+            <a href="mailto:andymalgonne@gmail.com" className="flex items-center gap-4 md:gap-3 text-gray-400 hover:text-green-500 transition-colors group text-base md:text-lg font-bold">
               <svg className="w-6 h-6 text-green-500 group-hover:animate-pulse drop-shadow-[0_0_5px_rgba(34,197,94,0.8)]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M0 4.667v14.666h24v-14.666h-24zm21.942 2l-9.942 6.944-9.942-6.944h19.884zm-19.942 10.666v-8.91l9.531 6.657.411.287.411-.287 9.531-6.657v8.91h-19.884z"/>
               </svg>
