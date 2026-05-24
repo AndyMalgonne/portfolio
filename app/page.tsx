@@ -195,7 +195,7 @@ export default function Home() {
 
         {/* TIMELINE / EDUCATION */}
         <div className="mt-16 md:mt-20 border-t border-green-500/30 pt-8">
-          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[notroot@andytropmimi.fr ~]# tail -f /var/log/syslog | grep "education"</p>
+          <p className="text-xs md:text-base text-green-400/70 mb-6 break-all">[notroot@andytropmimi.fr ~]# tail -f /var/log/syslog | grep &quot;education&quot;</p>
           <div className="space-y-8 md:space-y-6">
 
             <div className="relative pl-6 border-l border-gray-700">
@@ -227,10 +227,10 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 text-xs md:text-sm text-gray-400 font-mono">
               <div className="space-y-3 md:space-y-2 break-all">
                 <p>
-                  <span className="text-green-500">export</span> INTERESTS=<span className="text-yellow-500">"Anime, Japan, Gaming"</span>
+                  <span className="text-green-500">export</span> INTERESTS=<span className="text-yellow-500">&quot;Anime, Japan, Gaming&quot;</span>
                 </p>
                 <p>
-                  <span className="text-green-500">export</span> DOMOTIQUE=<span className="text-yellow-500">"HomeAssistant, SmartHome"</span>
+                  <span className="text-green-500">export</span> DOMOTIQUE=<span className="text-yellow-500">&quot;HomeAssistant, SmartHome&quot;</span>
                 </p>
               </div>
 
